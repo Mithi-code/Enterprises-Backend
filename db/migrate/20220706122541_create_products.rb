@@ -6,9 +6,9 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.text :description
       t.decimal :price
       t.string :SKU
-      t.integer :inventory_id
-      t.integer :category_id
-      t.integer :discount_id
+      t.references :inventory_id, index: true, foreign_key: true
+      t.references :category_id, index: true, foreign_key: true
+      t.references :discount_id, index: true, foreign_key: true
 
       t.timestamps
     end

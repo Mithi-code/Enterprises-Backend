@@ -3,8 +3,8 @@ class CreateCartItems < ActiveRecord::Migration[7.0]
     create_table :cart_items do |t|
       t.integer :id
       t.integer :quantity
-      t.integer :session_id
-      t.integer :product_id
+      t.references :session_id, index: true, foreign_key: true
+      t.references :product_id, index: true, foreign_key: true
 
       t.timestamps
     end
