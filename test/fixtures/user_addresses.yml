@@ -1,21 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  address_line1: MyString
-  address_line2: MyString
-  city: MyString
-  postal_code: 1
-  country: MyString
-  telephone: MyString
-  mobile: MyString
+  user: one
 
 two:
-  id: 1
-  address_line1: MyString
-  address_line2: MyString
-  city: MyString
-  postal_code: 1
-  country: MyString
-  telephone: MyString
-  mobile: MyString
+  user: two

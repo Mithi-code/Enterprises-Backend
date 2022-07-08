@@ -2,18 +2,6 @@
 
 one:
   id: 1
-  username: MyString
-  password: MyText
-  first_name: 9.99
-  last_name: MyString
-  address: MyString
-  telephone: 1
 
 two:
   id: 1
-  username: MyString
-  password: MyText
-  first_name: 9.99
-  last_name: MyString
-  address: MyString
-  telephone: 1

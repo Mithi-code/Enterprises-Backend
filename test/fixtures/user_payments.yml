@@ -2,14 +2,8 @@
 
 one:
   id: 1
-  payment_type: MyString
-  provider: MyString
-  account_no: 1
-  expiry: 2022-07-06
+  user: one
 
 two:
   id: 1
-  payment_type: MyString
-  provider: MyString
-  account_no: 1
-  expiry: 2022-07-06
+  user: two
