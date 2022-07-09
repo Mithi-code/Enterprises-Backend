@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_08_151555) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_09_143926) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discounts", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "desciption"
+    t.decimal "discount_percent"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_categories", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_inventories", id: :serial, force: :cascade do |t|
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.string "SKU"
+    t.bigint "product_inventories_id"
+    t.bigint "product_categories_id"
+    t.bigint "discount_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discount_id"], name: "index_products_on_discount_id"
+    t.index ["product_categories_id"], name: "index_products_on_product_categories_id"
+    t.index ["product_inventories_id"], name: "index_products_on_product_inventories_id"
+  end
 
   create_table "user_addresses", id: false, force: :cascade do |t|
     t.integer "id"
@@ -52,6 +90,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_151555) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "discounts"
+  add_foreign_key "products", "product_categories", column: "product_categories_id"
+  add_foreign_key "products", "product_inventories", column: "product_inventories_id"
   add_foreign_key "user_addresses", "users"
   add_foreign_key "user_payments", "users"
 end

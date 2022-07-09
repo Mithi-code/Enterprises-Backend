@@ -2,10 +2,6 @@
 
 one:
   id: 1
-  name: MyString
-  description: MyText
 
 two:
   id: 1
-  name: MyString
-  description: MyText
