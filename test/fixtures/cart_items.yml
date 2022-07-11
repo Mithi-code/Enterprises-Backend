@@ -2,8 +2,12 @@
 
 one:
   id: 1
+  shoppingSession: one
+  product: one
   quantity: 1
 
 two:
   id: 1
+  shoppingSession: two
+  product: two
   quantity: 1

@@ -2,10 +2,10 @@
 
 one:
   id: 1
-  order_id: 1
-  amount: 1
+  order_detail: one
+  total: 9.99
 
 two:
   id: 1
-  order_id: 1
-  amount: 1
+  order_detail: two
+  total: 9.99
